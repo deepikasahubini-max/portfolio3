@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepika Sahu | Temple Run Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Background Layers -->
+        <div class="parallax-bg layer-1"></div>
+        <div class="parallax-bg layer-2"></div>
+        <div class="parallax-bg layer-3"></div>
+
+        <!-- Main Content Overlay -->
+        <main id="main-stage">
+            <header>
+                <h1 class="pixel-text">DEEPIKA SAHU</h1>
+                <p class="tagline">BCA STUDENT | EXPLORER | DEVELOPER</p>
+            </header>
+
+            <nav class="game-nav">
+                <button onclick="showSection('hero')" class="nav-btn active">RUNNER</button>
+                <button onclick="showSection('about')" class="nav-btn">ABOUT</button>
+                <button onclick="showSection('skills')" class="nav-btn">SKILLS</button>
+                <button onclick="showSection('education')" class="nav-btn">GRADES</button>
+                <button onclick="showSection('contact')" class="nav-btn">FINISH</button>
+            </nav>
+
+            <section id="hero" class="game-section active">
+                <div class="runner-container">
+                    <div class="runner-character"></div>
+                    <div class="ground-line"></div>
+                </div>
+                <div class="info-card">
+                    <p>Press ARROWS or BUTTONS to navigate the Temple.</p>
+                </div>
+            </section>
+
+            <section id="about" class="game-section">
+                <div class="checkpoint-card">
+                    <h2 class="pixel-text">OBJECTIVE</h2>
+                    <p>Motivated and enthusiastic BCA student with a strong interest in programming and technology. Seeking an entry-level opportunity to gain hands-on experience and apply my knowledge of C, C++, Java, and Python in real-world projects.</p>
+                    <div class="collectible scroll-icon"></div>
+                </div>
+            </section>
+
+            <section id="skills" class="game-section">
+                <h2 class="pixel-text">POWER-UPS</h2>
+                <div class="skills-grid">
+                    <div class="skill-badge">C/C++</div>
+                    <div class="skill-badge">Java</div>
+                    <div class="skill-badge">Python</div>
+                    <div class="skill-badge">HTML/CSS</div>
+                    <div class="skill-badge">JS/PHP</div>
+                    <div class="skill-badge">DBMS</div>
+                </div>
+            </section>
+
+            <section id="education" class="game-section">
+                <h2 class="pixel-text">CHECKPOINTS</h2>
+                <div class="timeline">
+                    <div class="checkpoint">
+                        <h3>NIST University</h3>
+                        <p>BCA | 3rd Year (2026)</p>
+                    </div>
+                    <div class="checkpoint">
+                        <h3>Arihant School</h3>
+                        <p>12th | 60%</p>
+                    </div>
+                    <div class="checkpoint">
+                        <h3>SSVM</h3>
+                        <p>10th | 76%</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="game-section">
+                <h2 class="pixel-text">THE FINISH LINE</h2>
+                <div class="contact-card">
+                    <p>📧 deepikasahubini@gmail.com</p>
+                    <p>📞 9692958891</p>
+                    <p>📍 Berhampur, Odisha</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Chatbot Interface -->
+        <div id="chatbot-container" class="minimized">
+            <div id="chat-header" onclick="toggleChat()">
+                <span class="chat-icon">💬</span>
+                <span class="chat-title pixel-text">TEMPLE GUIDE</span>
+                <span class="toggle-btn">▲</span>
+            </div>
+            <div id="chat-body">
+                <div id="chat-messages">
+                    <div class="msg bot">Greetings, explorer! I am Deepika's guide. Ask me anything about her journey!</div>
+                </div>
+                <div id="chat-input-area">
+                    <input type="text" id="user-input" placeholder="Type a message..." onkeypress="handleKey(event)">
+                    <button id="send-btn" onclick="sendMessage()">➤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
